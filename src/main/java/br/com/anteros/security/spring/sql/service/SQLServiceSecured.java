@@ -41,64 +41,64 @@ public interface SQLServiceSecured<T,ID extends Serializable> extends SQLService
 	void flush();
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	T findOne(ID id);
+	T findOne(ID id, String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_exists", category="Busca", description="Verifica se uma entidade existe")
 	boolean exists(ID id);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	List<T> findAll();
+	List<T> findAll(String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	Page<T> findAll(Pageable pageable);
+	Page<T> findAll(Pageable pageable, String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	List<T> find(String sql);
+	List<T> find(String sql, String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	Page<T> find(String sql, Pageable pageable);
+	Page<T> find(String sql, Pageable pageable, String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	List<T> find(String sql, Object parameters);
+	List<T> find(String sql, Object parameters, String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	Page<T> find(String sql, Object parameters, Pageable pageable);
+	Page<T> find(String sql, Object parameters, Pageable pageable, String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Busca entidades")
-	List<T> findByNamedQuery(String queryName);
+	List<T> findByNamedQuery(String queryName, String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	Page<T> findByNamedQuery(String queryName, Pageable pageable);
+	Page<T> findByNamedQuery(String queryName, Pageable pageable, String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	List<T> findByNamedQuery(String queryName, Object parameters);
+	List<T> findByNamedQuery(String queryName, Object parameters, String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	Page<T> findByNamedQuery(String queryName, Object parameters, Pageable pageable);
+	Page<T> findByNamedQuery(String queryName, Object parameters, Pageable pageable, String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	T findOne(Predicate predicate);
+	T findOne(Predicate predicate, String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	T findOneBySql(String sql);
+	T findOneBySql(String sql, String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	T findOneBySql(String sql, Object parameters);
+	T findOneBySql(String sql, Object parameters, String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	List<T> findAll(Predicate predicate);
+	List<T> findAll(Predicate predicate, String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	Iterable<T> findAll(Predicate predicate, OrderSpecifier<?>... orders);
+	Iterable<T> findAll(Predicate predicate, String fieldsToForceLazy, OrderSpecifier<?>... orders);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	Page<T> findAll(Predicate predicate, Pageable pageable);
+	Page<T> findAll(Predicate predicate, Pageable pageable, String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
-	Page<T> findAll(Predicate predicate, Pageable pageable, OrderSpecifier<?>... orders);
+	Page<T> findAll(Predicate predicate, Pageable pageable,  String fieldsToForceLazy, OrderSpecifier<?>... orders);
 
 	@ActionSecured(actionName="ACT_refresh", category="Edição", description="Atualiza um objeto")
-	void refresh(T entity);
+	void refresh(T entity, String fieldsToForceLazy);
 
 	@ActionSecured(actionName="ACT_count", category="Edição", description="Conta a quantidade de objetos")
 	long count();
