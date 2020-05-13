@@ -21,6 +21,7 @@ import java.util.List;
 import br.com.anteros.persistence.dsl.osql.types.OrderSpecifier;
 import br.com.anteros.persistence.dsl.osql.types.Predicate;
 import br.com.anteros.persistence.metadata.identifier.Identifier;
+import br.com.anteros.persistence.session.lock.LockOptions;
 import br.com.anteros.persistence.session.repository.Page;
 import br.com.anteros.persistence.session.repository.Pageable;
 import br.com.anteros.persistence.session.service.SQLService;
@@ -42,7 +43,10 @@ public interface SQLServiceSecured<T,ID extends Serializable> extends SQLService
 
 	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
 	T findOne(ID id, String fieldsToForceLazy);
-
+	
+	@ActionSecured(actionName="ACT_select", category="Busca", description="Buscar entidades")
+	T findByCode(String id, String fieldsToForceLazy);
+	
 	@ActionSecured(actionName="ACT_exists", category="Busca", description="Verifica se uma entidade existe")
 	boolean exists(ID id);
 
