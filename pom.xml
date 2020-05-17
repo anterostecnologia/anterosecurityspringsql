@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.anteros</groupId>
 	<artifactId>Anteros-Security-Spring-SQL</artifactId>
-	<version>1.0.4</version>
+	<version>1.0.5</version>
 
 	<name>Anteros Security Spring SQL</name>
 	<description>
@@ -128,6 +128,25 @@
 		</dependency>
 
 	</dependencies>
+	
+	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>bintray-puravida-software-repo</id>
+			<name>bintray</name>
+			<url>https://dl.bintray.com/puravida-software/repo</url>
+		</repository>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>spring</id>
+			<name>extensions</name>
+			<url>https://repo.spring.io/release</url>
+		</repository>
+	</repositories>
 
 	<profiles>
 		<profile>
